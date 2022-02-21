@@ -1,0 +1,11 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+label{
+    text-align: justify;
+}
+
+#mycontainer {
+    max-width: 650px !important;
+}
