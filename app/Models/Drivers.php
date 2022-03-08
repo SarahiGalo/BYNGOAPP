@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class Drivers extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_users";
+    protected $table = "tb_drivers";
     //protected $primarykey = "id";
     protected $fillable = [
         'nombre', 
         'app', 
-        'apm', 
+        'apm',
         'calle',
         'colonia',
         'municipio',
@@ -23,8 +23,12 @@ class Users extends Model
         'tel',
         'email',
         'email2',
-        'pass1', 
-        'pass2', 
-        'picuser'
+        'pass1',
+        'pass2',
+        'curp',
+        'licencia',
+        'piclicen',
+        'transporte',
+        'picrep'
     ];
 }

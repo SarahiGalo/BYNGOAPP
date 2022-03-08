@@ -1,3 +1,4 @@
+const formulario = document.getElementById('form_one');
 
 const $input = document.querySelector("#nombre");
             const patron = /[a-zA-Z ]+/;

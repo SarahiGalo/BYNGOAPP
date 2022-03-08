@@ -1,0 +1,83 @@
+@import url(/node_modules/bootstrap/scss/bootstrap.scss);
+/*# sourceMappingURL=main.css.map */
+
+
+.logo{
+    background-color: #EEEDDE;
+    height: 120px;
+}
+
+.top-right {
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#mycontainer {
+    max-width: 650px !important;
+}
+
+#foot{
+    background-color: #000000;
+    height: 65px;
+}
+
+h5, h6{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size:x-large;
+    
+}
+h2{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#image{
+    max-width: 30%;
+    max-height: 50%;
+    display:block;
+    margin:auto;
+}
+
+#logo{
+    max-width: 50%;
+    max-height: 100%;
+}
+
+body{
+    background-image: url("images/282_Arrow_Set.jpg");
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0px 100px; 
+}
+
+.alineado{
+    vertical-align:bottom;
+}
+
+#images{
+    max-width: 50%;
+    max-height: 80%;
+    display:block;
+    margin:auto;
+}
+
+h3 {
+    display:block;
+    margin:auto;
+    padding: 0px 250px; 
+}

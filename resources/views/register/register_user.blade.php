@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css/stylelogin.css" rel="stylesheet" type="text/css">
-    <link href="css/app.css" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>System 0.1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{{asset('css/main.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>BYNGO</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}" ></script>
@@ -15,23 +19,31 @@
 </head>
 <body>
 
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/index') }}">Inicio</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-    </div>
+<div class="logo">
+    <a href="{{ url('/welcome') }}"><img src="{{asset('images/logo.png')}}" id="logo"></a> 
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/index') }}">Inicio</a>
+                    @else
+                        <a href="{{ route('login') }}">Inicia Sesión</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Registrarse</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+</div>
 
     <br><br>
     <div class="container-fluid"> 
         <div id="mycontainer" class="container">
         <div class="card">
-            <div class="card-header"><h5> Registro </h5></div>
+            <div class="card-header"> Registro </div>
             <div class="card-body">
-                <form id="form_one" action="" method="" class="">
+                <form id="form_one" action="{{url('user/store_user')}}" method="post" enctype="multipart/form-data">
+                @csrf
 
                     <h4>Datos del Usuario</h4>
 
@@ -134,7 +146,7 @@
                         </div>  
                     </div>
                     <div class="d-grid gap-2 col-2 mx-auto">
-                        <button type="submit" class="btn btn-primary"> Guardar </button>
+                        <input type="Submit" value="Guardar" class="btn btn-primary">
                     </div>
                 </form>
             </div>
