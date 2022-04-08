@@ -43,15 +43,57 @@
                 <div class="d-grid gap-2 d-md-block">
                     <button type="button" class="btn btn-success" style="position:relative; left:30px;">Historial pedidos</button>
                 </div>
+                <br>
+                <H5>Detalles del Pedido</H5>
+                <center>
+                    <form action="{{route('alta_pedido')}}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <p>Nombre del Producto</p><input type="text" name="nomp" id="nomp">
+                                </td>
+                                <td>
+                                    <p>Número de Paquetes</p><input type="text" name="nump" id="nump">
+                                </td>
+                                <td>
+                                    <p>Destino</p><input type="text" name="destino" id="destino">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Proveedor</p><input type="text" name="proveedor" id="proveedor">
+                                </td>
+                                <td>
+                                    <p>Repartidor</p>
+                                    <select name="id_rep" id="id_rep">
+                                            <option value="">Selecciona un repartidor</option>
+                                            <option value=""></option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <p>Destinatario</p><input type="text" name="destinatario" id="destinatario">
+                                </td> 
+                            </tr>
+                        </table>
+                    </div>
+                    </form>
+                    <button type="Submit" class="btn btn-dark">Solicitar</button>
+                </center>
             </div>
         </td>
     </tr>
     @endforeach
 </table>
+
 <br>
 <footer>
     <div id="foot"> </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,9 @@ Route::put('/guardar_user/{id}',[UsersController::class,'guardar_user'])->name('
 //---------------- BORRAR/DELETE ----------------------
 Route::delete('/borrar/{id}',[UsersController::class,'borrar'])->name('borrar');
 Route::get('/borrar/{id}',[UsersController::class,'borrar'])->name('borrar2');
+
+Route::get('/order', [OrdersController::class, 'order'])->name('order');
+Route::POST('/alta_pedido',[OrdersController::class,'alta_producto'])->name('alta_pedido');
 
 Auth::routes();
 
